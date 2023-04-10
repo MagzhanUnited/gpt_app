@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gpt_app/components/droping_down.dart';
 import 'package:flutter_gpt_app/controllers/component_controllers.dart';
 import 'package:flutter_gpt_app/controllers/question_controller.dart';
 import 'package:get/get.dart';
-
 import 'components/buttons.dart';
 
 class CalculatorPage extends StatefulWidget {
@@ -73,7 +73,8 @@ class _CalculatorPageState extends State<CalculatorPage> {
                     itemBuilder: (context, index) {
                       switch (buttons[index]) {
                         case 'C':
-                          return _unique_button();
+                          return DropingDown(
+                              items: ['Option 1'], wiget: _unique_button());
                         case 'DEL':
                           return GestureDetector(
                             child: MyBotton(
@@ -170,8 +171,6 @@ class _CalculatorPageState extends State<CalculatorPage> {
       print(e);
     }
   }
-
-  _dropDown() {}
 
   _unique_button() {
     return Container(
